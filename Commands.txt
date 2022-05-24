@@ -1,0 +1,46 @@
+npm init -y -initialize all the default values in package.json 
+npm i --save-dev jest //instalamos a biblioteca apenas em ambiente de desenvolvimento. 
+
+Change packjage.json to jest
+
+{
+  "name": "testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^28.1.0"
+  }
+}
+
+//to run our tests we need to use 
+npm test
+
+To test a file we need to create a file with the file name but before the js we use test.
+So we are going to test sum.js we are going to use sum.test.js 
+
+to export a function we need to use module.export (function name) for exemple
+
+functiom sum (a + b){
+    return (a + b); 
+}
+
+module.exports = sum
+
+in sum.test.js 
+const sum = require(./sum)
+
+(write the test)
+
+test('Properly test two numbers', () => {
+    expect(sum(1,2)).toBe(3);
+})
+
+
+https://jestjs.io/docs/using-matchers
